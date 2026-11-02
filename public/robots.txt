@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /enter
+Allow: /plans
+
+# Prevent indexing of private shop and admin endpoints
+Disallow: /dashboard/
+Disallow: /admin/
+Disallow: /menu-manager
+Disallow: /login
+
+Sitemap: https://tmsavannah.com/sitemap.xml
