@@ -7,7 +7,8 @@
     "dev": "vite --port 5180",
     "build": "vite build",
     "preview": "vite preview",
-    "provision:shop": "node scripts/provision-pilot-shop.mjs"
+    "provision:shop": "node scripts/provision-pilot-shop.mjs",
+    "lease:reconcile": "node scripts/reconcile-feature-leases.mjs --now"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
