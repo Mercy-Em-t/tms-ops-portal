@@ -1,0 +1,31 @@
+name: Midnight Feature Lease & Subscription Reconciler
+
+on:
+  schedule:
+    # Runs everyday at 00:01:00 UTC (right as 23:59:59 turns to 00:00:00 and 1 minute passes)
+    - cron: '1 0 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  reconcile-leases:
+    name: Sweep & Reconcile Expired Leases
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Execute Midnight Lease Sweep
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run lease:reconcile
