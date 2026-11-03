@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --port 5180",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "provision:shop": "node scripts/provision-pilot-shop.mjs"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
