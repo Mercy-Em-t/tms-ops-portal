@@ -11,7 +11,8 @@
     "provision:creative-galore": "node scripts/provision-creative-galore.mjs",
     "lease:reconcile": "node scripts/reconcile-feature-leases.mjs --now",
     "seed:leahs-kitchen": "node scripts/seeds/seed-leahs-kitchen.mjs",
-    "seed:sample-orders": "node scripts/seeds/seed-sample-orders.mjs"
+    "seed:sample-orders": "node scripts/seeds/seed-sample-orders.mjs",
+    "worker:inspector": "node scripts/second-time-inspector-worker.mjs"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
