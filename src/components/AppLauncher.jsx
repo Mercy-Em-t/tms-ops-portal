@@ -55,7 +55,7 @@ export default function AppLauncher() {
       name: "Security Lab", 
       desc: "Trust & Safety", 
       icon: <ShieldCheckIcon className="w-6 h-6 text-red-500" />, 
-      path: "/admin/monitoring",
+      path: "/admin/security",
       color: "bg-red-50"
     },
     { 

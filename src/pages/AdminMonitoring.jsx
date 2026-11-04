@@ -77,12 +77,27 @@ export default function AdminMonitoring() {
        const localLogs = localStr ? JSON.parse(localStr) : [];
 
        // 2. Telemetry alerts from cloud events table
-       const { data: cloudLogs } = await supabase
-         .from("events")
-         .select("*")
-         .like("event_type", "security_alert_%")
-         .order("created_at", { ascending: false })
-         .limit(50);
+       let cloudLogs = null;
+       try {
+         const res = await supabase
+           .from("events")
+           .select("*")
+           .like("event_type", "security_alert_%")
+           .order("timestamp", { ascending: false })
+           .limit(50);
+         cloudLogs = res.data;
+         if (res.error && res.error.message && "timestamp" in res.error.message) {
+           const fallbackRes = await supabase
+             .from("events")
+             .select("*")
+             .like("event_type", "security_alert_%")
+             .order("created_at", { ascending: false })
+             .limit(50);
+           cloudLogs = fallbackRes.data;
+         }
+       } catch (e) {
+         console.warn("Telemetry query fallback error", e);
+       }
 
        // Merge & Deduplicate based on exact match of timestamp and event_type
        const unified = [...localLogs];
@@ -165,8 +180,13 @@ export default function AdminMonitoring() {
         <div className="border border-red-900/30 bg-gray-900/50 rounded flex flex-col overflow-hidden relative group">
            <div className="absolute top-0 right-0 w-20 h-20 bg-red-500/5 blur-3xl group-hover:bg-red-500/10 transition-all"></div>
            <div className="bg-red-900/20 px-4 py-2 border-b border-red-900/30 font-bold uppercase text-xs tracking-wider text-red-500 flex justify-between items-center">
-              Security Flags
-              <span className="text-red-400 text-[10px] bg-red-900/30 px-2 py-0.5 rounded border border-red-800">{securityAlerts.length} ALERT</span>
+              <span>Security Flags</span>
+              <div className="flex items-center gap-2">
+                <span className="text-red-400 text-[10px] bg-red-900/30 px-2 py-0.5 rounded border border-red-800">{securityAlerts.length} ALERT</span>
+                <Link to="/admin/security" className="text-[10px] bg-red-950 hover:bg-red-900 text-red-300 px-2 py-0.5 rounded border border-red-700 font-bold transition">
+                  CONSOLE →
+                </Link>
+              </div>
            </div>
            <div className="p-4 space-y-2 text-sm flex-1 overflow-y-auto">
                {securityAlerts.length > 0 ? (

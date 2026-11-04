@@ -9,6 +9,7 @@ import AdminEngineering from "../pages/AdminEngineering";
 import AdminGlobalOrders from "../pages/AdminGlobalOrders";
 import AdminGlobalProducts from "../pages/AdminGlobalProducts";
 import AdminMonitoring from "../pages/AdminMonitoring";
+import AdminSecurity from "../pages/AdminSecurity";
 import AdminSuppliers from "../pages/AdminSuppliers";
 import AdminAnalytics from "../pages/AdminAnalytics";
 import AdminPayouts from "../pages/AdminPayouts";
@@ -30,6 +31,7 @@ export default function AdminRoutes() {
       <Route path="/global-orders" element={<AdminGlobalOrders />} />
       <Route path="/global-products" element={<AdminGlobalProducts />} />
       <Route path="/monitoring" element={<AdminMonitoring />} />
+      <Route path="/security" element={<AdminSecurity />} />
       <Route path="/suppliers" element={<AdminSuppliers />} />
       <Route path="/analytics" element={<AdminAnalytics />} />
       <Route path="/payouts" element={<AdminPayouts />} />

@@ -113,12 +113,12 @@ export default function MasterAdmin() {
     {
       id: "security",
       name: "Security & Trust",
-      desc: "Risk Assessment & Fraud Shields",
+      desc: "Threat Intercepts & Malicious Upload Center",
       icon: <ShieldCheckIcon className="w-8 h-8" />,
-      path: "/admin/monitoring",
+      path: "/admin/security",
       color: "bg-red-600",
       status: "Hardened",
-      metrics: "0 Critical Threats"
+      metrics: "Live Threat Intercepts"
     },
     {
       id: "salesbrain",

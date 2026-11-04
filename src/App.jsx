@@ -11,6 +11,7 @@ const AdminEngineering    = lazy(() => import('./pages/AdminEngineering'));
 const AdminGlobalOrders   = lazy(() => import('./pages/AdminGlobalOrders'));
 const AdminGlobalProducts = lazy(() => import('./pages/AdminGlobalProducts'));
 const AdminMonitoring     = lazy(() => import('./pages/AdminMonitoring'));
+const AdminSecurity       = lazy(() => import('./pages/AdminSecurity'));
 const AdminSuppliers      = lazy(() => import('./pages/AdminSuppliers'));
 const AdminAnalytics      = lazy(() => import('./pages/AdminAnalytics'));
 const AdminPayouts        = lazy(() => import('./pages/AdminPayouts'));
@@ -51,6 +52,7 @@ export default function App() {
         <Route path="/admin/global-orders" element={<AdminGlobalOrders />} />
         <Route path="/admin/global-products" element={<AdminGlobalProducts />} />
         <Route path="/admin/monitoring" element={<AdminMonitoring />} />
+        <Route path="/admin/security" element={<AdminSecurity />} />
         <Route path="/admin/suppliers" element={<AdminSuppliers />} />
         <Route path="/admin/analytics" element={<AdminAnalytics />} />
         <Route path="/admin/payouts" element={<AdminPayouts />} />

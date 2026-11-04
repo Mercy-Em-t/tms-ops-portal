@@ -243,7 +243,14 @@ export default function Admin() {
                     <h3 className="font-bold text-indigo-400 group-hover:text-indigo-300 text-sm">God-Mode Access</h3>
                     <p className="text-[10px] text-slate-500 mt-2">Simulate environments and hooks.</p>
                  </Link>
-                 <Link to="/admin/monitoring" className="p-4 bg-black/40 rounded-xl border border-slate-800 hover:border-indigo-500/50 hover:bg-black/60 transition group font-mono">
+                 <Link to="/admin/security" className="p-4 bg-black/40 rounded-xl border border-slate-800 hover:border-red-500/50 hover:bg-black/60 transition group font-mono">
+                     <h3 className="font-bold text-red-400 group-hover:text-red-300 text-sm flex items-center gap-2">
+                       <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                       Security Shields
+                     </h3>
+                     <p className="text-[10px] text-slate-500 mt-2">Disguised files & threat intercept ledger.</p>
+                  </Link>
+                  <Link to="/admin/monitoring" className="p-4 bg-black/40 rounded-xl border border-slate-800 hover:border-indigo-500/50 hover:bg-black/60 transition group font-mono">
                     <h3 className="font-bold text-red-400 group-hover:text-red-300 text-sm flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
                       Live Packets
