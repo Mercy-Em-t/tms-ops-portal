@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate, Link } from 'react-router-dom';
 
+const Login               = lazy(() => import('./pages/Login'));
 const MasterAdmin         = lazy(() => import('./pages/MasterAdmin'));
 const Admin               = lazy(() => import('./pages/Admin'));
 const AdminShops          = lazy(() => import('./pages/AdminShops'));
@@ -37,6 +38,9 @@ export default function App() {
   return (
     <Suspense fallback={<LoadingFallback />}>
       <Routes>
+        {/* Authentication Gateway */}
+        <Route path="/login" element={<Login />} />
+
         {/* Default redirect to master admin dashboard */}
         <Route path="/" element={<Navigate to="/admin" replace />} />
         <Route path="/a/admin" element={<Navigate to="/admin" replace />} />
