@@ -38,6 +38,8 @@ export default function AdminRoutes() {
       <Route path="/analytics" element={<AdminAnalytics />} />
       <Route path="/payouts" element={<AdminPayouts />} />
       <Route path="/replay" element={<AdminReplayDesk />} />
+      <Route path="/leads" element={<AdminReplayDesk />} />
+      <Route path="/radar" element={<AdminReplayDesk />} />
       <Route path="/observatory" element={<AdminObservatory />} />
       <Route path="/industries" element={<AdminIndustries />} />
       <Route path="/gateway" element={<AdminGateway />} />

@@ -168,7 +168,20 @@ export default function Admin() {
                  </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
-                 <Link to="/a/delivery/manager" className="p-4 bg-slate-900 rounded-xl shadow-lg border-2 border-transparent hover:border-slate-500 transition-all group sm:col-span-2">
+                 <Link to="/admin/leads" className="p-4 bg-slate-900 rounded-xl shadow-lg border border-emerald-500/40 hover:border-emerald-400 transition-all group sm:col-span-2">
+                     <div className="flex items-center justify-between font-mono">
+                        <h3 className="font-bold text-emerald-400 flex items-center gap-2">
+                           📡 In-Checkout & Leads Radar
+                        </h3>
+                        <span className="bg-emerald-500 text-[10px] px-2 py-0.5 rounded-full text-slate-950 font-black animate-pulse uppercase">
+                           Live Radar
+                        </span>
+                     </div>
+                     <p className="text-[11px] text-slate-400 mt-1 font-mono">
+                        Real-time unconfirmed carts, 30m auto-expiry countdowns, and 1-tap WhatsApp concierge nudges. Shielded from merchant kitchens.
+                     </p>
+                  </Link>
+                  <Link to="/a/delivery/manager"  className="p-4 bg-slate-900 rounded-xl shadow-lg border-2 border-transparent hover:border-slate-500 transition-all group sm:col-span-2">
                     <div className="flex items-center justify-between font-mono">
                        <h3 className="font-bold text-amber-400 flex items-center gap-2">🚚 Logistics Hub</h3>
                        <span className="bg-amber-500 text-[10px] px-1.5 py-0.5 rounded text-white font-black animate-pulse uppercase">Active Hubs</span>
