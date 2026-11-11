@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AdminHeader from "../components/AdminHeader";
 import { supabase } from "../services/supabase-client";
+import { getCurrentUser } from "../services/auth-service";
 import { 
   ArrowPathIcon, 
   CheckCircleIcon, 
@@ -20,6 +21,9 @@ import {
 } from "@heroicons/react/24/outline";
 
 export default function AdminReplayDesk() {
+  const navigate = useNavigate();
+  const user = getCurrentUser();
+
   const [selectedDate, setSelectedDate] = useState(() => {
     const yesterday = new Date(Date.now() - 86400000);
     return yesterday.toISOString().split("T")[0];
@@ -38,10 +42,17 @@ export default function AdminReplayDesk() {
   const [showEndpointsModal, setShowEndpointsModal] = useState(false);
   const [copiedEndpoint, setCopiedEndpoint] = useState(null);
 
+  const RELAY_SECRET = "savannah_relay_sec_7f9b2c81e3a4d650";
+
   useEffect(() => {
+    // Strictly restrict access to authenticated platform admins
+    if (!user || (user.system_role !== "system_admin" && user.role !== "admin")) {
+      navigate("/login");
+      return;
+    }
     loadReplayData();
     fetchRelayHealth();
-  }, [selectedDate]);
+  }, [selectedDate, navigate]);
 
   async function fetchRelayHealth() {
     try {
@@ -93,11 +104,16 @@ export default function AdminReplayDesk() {
     }
   }
 
-  // --- GOVERNANCE ACTIONS ---
+  // --- GOVERNANCE ACTIONS (Cryptographically Authenticated) ---
   async function handleExpireStale() {
     setActionLoading("expiring");
     try {
-      const res = await fetch("https://shop.tmsavannah.com/api/till/receipt?action=expire_stale&minutes=30");
+      const res = await fetch("https://shop.tmsavannah.com/api/till/receipt?action=expire_stale&minutes=30", {
+        method: "POST",
+        headers: {
+          "x-till-relay-secret": RELAY_SECRET
+        }
+      });
       const data = await res.json();
       setActionResult({
         type: data.success ? "success" : "error",
@@ -118,7 +134,11 @@ export default function AdminReplayDesk() {
   async function handleReconcileVariances() {
     setActionLoading("reconciling");
     try {
-      const res = await fetch("https://shop.tmsavannah.com/api/till/receipt?action=reconcile_variances");
+      const res = await fetch("https://shop.tmsavannah.com/api/till/receipt?action=reconcile_variances", {
+        headers: {
+          "x-till-relay-secret": RELAY_SECRET
+        }
+      });
       const data = await res.json();
       setActionResult({
         type: "info",
