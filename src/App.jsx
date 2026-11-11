@@ -18,6 +18,8 @@ const AdminAnalytics      = lazy(() => import('./pages/AdminAnalytics'));
 const AdminPayouts        = lazy(() => import('./pages/AdminPayouts'));
 const AdminIndustries     = lazy(() => import('./pages/AdminIndustries'));
 const AdminGateway        = lazy(() => import('./pages/AdminGateway'));
+const AdminObservatory    = lazy(() => import('./pages/AdminObservatory'));
+const AdminReplayDesk     = lazy(() => import('./pages/AdminReplayDesk'));
 const AdminUserGuide      = lazy(() => import('./pages/AdminUserGuide'));
 const BusinessIntelligence= lazy(() => import('./pages/BusinessIntelligence'));
 const DeveloperPortal     = lazy(() => import('./pages/DeveloperPortal'));
@@ -62,10 +64,20 @@ export default function App() {
         <Route path="/admin/payouts" element={<AdminPayouts />} />
         <Route path="/admin/industries" element={<AdminIndustries />} />
         <Route path="/admin/gateway" element={<AdminGateway />} />
+        <Route path="/admin/observatory" element={<AdminObservatory />} />
+        <Route path="/observatory" element={<AdminObservatory />} />
+        <Route path="/admin/replay" element={<AdminReplayDesk />} />
+        <Route path="/replay" element={<AdminReplayDesk />} />
         <Route path="/admin/guide" element={<AdminUserGuide />} />
         <Route path="/admin/intelligence" element={<BusinessIntelligence />} />
         <Route path="/admin/developer" element={<DeveloperPortal />} />
         <Route path="/admin/social" element={<SocialCommerce />} />
+
+        {/* Short aliases for PWA Home Screen Shortcuts */}
+        <Route path="/payouts" element={<AdminPayouts />} />
+        <Route path="/ops" element={<Admin />} />
+        <Route path="/orders" element={<AdminGlobalOrders />} />
+        <Route path="/admin/orders" element={<AdminGlobalOrders />} />
 
         {/* Catch-all */}
         <Route path="*" element={<Navigate to="/admin" replace />} />

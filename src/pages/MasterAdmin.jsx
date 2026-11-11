@@ -12,7 +12,9 @@ import {
   ChartBarIcon,
   ShieldCheckIcon,
   CpuChipIcon,
-  CircleStackIcon
+  CircleStackIcon,
+  SignalIcon,
+  ClockIcon
 } from "@heroicons/react/24/outline";
 
 export default function MasterAdmin() {
@@ -60,6 +62,26 @@ export default function MasterAdmin() {
   };
 
   const systems = [
+    {
+      id: "replay",
+      name: "Forensic Replay Desk",
+      desc: "Order & Payment Stream, Non-Linear Permutations & Variance Audit",
+      icon: <ClockIcon className="w-8 h-8" />,
+      path: "/admin/replay",
+      color: "bg-teal-600",
+      status: "Live Stream",
+      metrics: "Timeline & Reconciliation"
+    },
+    {
+      id: "observatory",
+      name: "Edge Observatory",
+      desc: "Remote WhatsApp, Live Ping/RTT & Relay Inspector",
+      icon: <SignalIcon className="w-8 h-8" />,
+      path: "/admin/observatory",
+      color: "bg-emerald-600",
+      status: "Pavilion 24/7",
+      metrics: "Live RTT & Relay Watch"
+    },
     {
       id: "registry",
       name: "Registry Ops",

@@ -1,21 +1,49 @@
 {
-  "name": "The Modern Savannah",
-  "short_name": "Savannah",
-  "description": "Instant WhatsApp menus and ordering for small businesses.",
-  "start_url": "/",
+  "id": "/admin/payouts",
+  "name": "TMS Ops & Live Till Portal",
+  "short_name": "TMS Ops",
+  "description": "Live M-Pesa Till 5758419 Ledger, Variance Audit, Order Reconciliation & Multi-Tenant Operations.",
+  "start_url": "/admin/payouts",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#863bff",
+  "orientation": "portrait",
+  "background_color": "#020617",
+  "theme_color": "#0f172a",
   "icons": [
     {
       "src": "/modern_savannah_logo.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/modern_savannah_logo.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Live Till Ledger & Variance",
+      "short_name": "Till Ledger",
+      "description": "Real-time M-Pesa Till inflows, outflows, and balance variance",
+      "url": "/admin/payouts",
+      "icons": [{ "src": "/modern_savannah_logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Global Live Orders",
+      "short_name": "Orders",
+      "description": "Monitor and manage all storefront orders",
+      "url": "/admin/orders",
+      "icons": [{ "src": "/modern_savannah_logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "System Hub",
+      "short_name": "Ops Hub",
+      "description": "Main operations command center",
+      "url": "/admin",
+      "icons": [{ "src": "/modern_savannah_logo.png", "sizes": "192x192" }]
     }
   ]
 }

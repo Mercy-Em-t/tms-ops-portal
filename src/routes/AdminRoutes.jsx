@@ -15,6 +15,8 @@ import AdminAnalytics from "../pages/AdminAnalytics";
 import AdminPayouts from "../pages/AdminPayouts";
 import AdminIndustries from "../pages/AdminIndustries";
 import AdminGateway from "../pages/AdminGateway";
+import AdminObservatory from "../pages/AdminObservatory";
+import AdminReplayDesk from "../pages/AdminReplayDesk";
 import DeveloperPortal from "../pages/DeveloperPortal";
 import WholesaleSalesSystem from "../pages/WholesaleSalesSystem";
 
@@ -35,6 +37,8 @@ export default function AdminRoutes() {
       <Route path="/suppliers" element={<AdminSuppliers />} />
       <Route path="/analytics" element={<AdminAnalytics />} />
       <Route path="/payouts" element={<AdminPayouts />} />
+      <Route path="/replay" element={<AdminReplayDesk />} />
+      <Route path="/observatory" element={<AdminObservatory />} />
       <Route path="/industries" element={<AdminIndustries />} />
       <Route path="/gateway" element={<AdminGateway />} />
       <Route path="/developer/portal" element={<DeveloperPortal />} />
