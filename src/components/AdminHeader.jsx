@@ -51,6 +51,13 @@ export default function AdminHeader({ title, user, backLink = "/admin" }) {
         
         <div className="flex items-center gap-3 md:gap-5">
           <Link
+            to="/lifecycle"
+            className="px-2.5 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white text-[10px] font-black uppercase tracking-wider transition shadow-xs"
+          >
+            🛡️ Order Guard Live
+          </Link>
+
+          <Link
             to="/admin/replay"
             className="px-2.5 py-1.5 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-[10px] font-black uppercase tracking-wider transition shadow-xs"
           >

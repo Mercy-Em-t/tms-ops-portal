@@ -19,6 +19,7 @@ import AdminObservatory from "../pages/AdminObservatory";
 import AdminReplayDesk from "../pages/AdminReplayDesk";
 import DeveloperPortal from "../pages/DeveloperPortal";
 import WholesaleSalesSystem from "../pages/WholesaleSalesSystem";
+import OrderLifecycleObservatory from "../pages/OrderLifecycleObservatory";
 
 export default function AdminRoutes() {
   return (
@@ -41,6 +42,7 @@ export default function AdminRoutes() {
       <Route path="/leads" element={<AdminReplayDesk />} />
       <Route path="/radar" element={<AdminReplayDesk />} />
       <Route path="/observatory" element={<AdminObservatory />} />
+      <Route path="/lifecycle" element={<OrderLifecycleObservatory />} />
       <Route path="/industries" element={<AdminIndustries />} />
       <Route path="/gateway" element={<AdminGateway />} />
       <Route path="/developer/portal" element={<DeveloperPortal />} />

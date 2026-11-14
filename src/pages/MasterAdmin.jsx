@@ -133,6 +133,16 @@ export default function MasterAdmin() {
       metrics: "Ops ↔ Perpetual"
     },
     {
+      id: "order-lifecycle",
+      name: "Checkout & Order Guard Live",
+      desc: "8-Stage Landing→Payment Pipeline, Live Holds/TTLs & 7×1,000 Resilience Probe",
+      icon: <ShieldCheckIcon className="w-8 h-8" />,
+      path: "/lifecycle",
+      color: "bg-cyan-600",
+      status: "7,000 Req Probe",
+      metrics: "0 Oversell · Live TTLs"
+    },
+    {
       id: "engineering",
       name: "Engineering Sensors",
       desc: "Raw Telemetry & API Performance",
