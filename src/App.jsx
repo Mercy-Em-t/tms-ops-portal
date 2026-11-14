@@ -24,6 +24,7 @@ const AdminUserGuide      = lazy(() => import('./pages/AdminUserGuide'));
 const BusinessIntelligence= lazy(() => import('./pages/BusinessIntelligence'));
 const DeveloperPortal     = lazy(() => import('./pages/DeveloperPortal'));
 const SocialCommerce      = lazy(() => import('./pages/SocialCommerce'));
+const PerpetualBridge     = lazy(() => import('./pages/PerpetualBridge'));
 
 function LoadingFallback() {
   return (
@@ -64,6 +65,8 @@ export default function App() {
         <Route path="/admin/payouts" element={<AdminPayouts />} />
         <Route path="/admin/industries" element={<AdminIndustries />} />
         <Route path="/admin/gateway" element={<AdminGateway />} />
+        <Route path="/admin/bridge" element={<PerpetualBridge />} />
+        <Route path="/bridge" element={<PerpetualBridge />} />
         <Route path="/admin/observatory" element={<AdminObservatory />} />
         <Route path="/observatory" element={<AdminObservatory />} />
         <Route path="/admin/replay" element={<AdminReplayDesk />} />

@@ -123,6 +123,16 @@ export default function MasterAdmin() {
       metrics: `${stats.orders} Real-time Orders`
     },
     {
+      id: "perpetual-bridge",
+      name: "Perpetual Bridge & DIKW",
+      desc: "Keep-Alive Bridge & Data → Information → Knowledge → Gated Wisdom",
+      icon: <CpuChipIcon className="w-8 h-8" />,
+      path: "/bridge",
+      color: "bg-emerald-700",
+      status: "DIKW Gated",
+      metrics: "Ops ↔ Perpetual"
+    },
+    {
       id: "engineering",
       name: "Engineering Sensors",
       desc: "Raw Telemetry & API Performance",
